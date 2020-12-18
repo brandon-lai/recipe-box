@@ -8,7 +8,9 @@ export const globalStyles = StyleSheet.create({
     titleText: {
         fontFamily: 'cereal-medium',
         fontSize: 18,
-        color: '#333'
+        color: '#333',
+        marginTop: 20,
+        marginLeft: 7
     },
     paragraph: {
         marginVertical: 8,

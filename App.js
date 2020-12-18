@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading'; 
 import Home from './screens/home';
+import Navigator from './routes/homeStack';
 
 const getFonts = () => Font.loadAsync({
     'cereal-light': require('./assets/fonts/AirbnbCerealLight.ttf'),
@@ -14,7 +15,7 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <Home />
+      <Navigator />
     );
   } else {
     return (
