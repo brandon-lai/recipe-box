@@ -3,12 +3,16 @@ import { createAppContainer } from 'react-navigation';
 import Home from '../screens/home';
 import RecipeDetails from '../screens/recipeDetails';
 import { globalStyles } from '../styles/global';
+import Header from '../shared/header';
+import React from 'react';
 
 const screens = {
     Home: {
         screen: Home,
-        navigationOptions: {
-            title: 'Recipes!',
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header navigation={navigation} />,
+            }
         }
     },
     RecipeDetails: {
@@ -19,11 +23,6 @@ const screens = {
     }
 }
 
-const HomeStack = createStackNavigator(screens, {
-    defaultNavigationOptions: {
-        headerStyle: globalStyles.mainLabelColor,
-        headerTintColor: '#fff'
-    }
-});
+const HomeStack = createStackNavigator(screens);
 
 export default createAppContainer(HomeStack);

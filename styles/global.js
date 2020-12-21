@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-    mainLabelColor: {
+    header: {
         backgroundColor: '#ffbf69',
+        color: '#fff',
     },
     container: {
         flex: 1,
