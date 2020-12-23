@@ -7,7 +7,8 @@ export const globalStyles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        padding: 20
+        padding: 20,
+        backgroundColor: '#fff'
     },
     titleText: {
         fontFamily: 'cereal-medium',
@@ -19,5 +20,10 @@ export const globalStyles = StyleSheet.create({
     paragraph: {
         marginVertical: 8,
         lineHeight: 20
-    }
+    },
+    ratings: {
+        backgroundColor: '#fff',
+        color: '#ffbf69',
+        alignItems: 'flex-end',
+    },
 });
