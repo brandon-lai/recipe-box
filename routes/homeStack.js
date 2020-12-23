@@ -11,6 +11,9 @@ const screens = {
         screen: Home,
         navigationOptions: ({ navigation }) => {
             return {
+                headerStyle: {
+                    backgroundColor: globalStyles.header.backgroundColor
+                },
                 headerTitle: () => <Header navigation={navigation} />,
             }
         }
