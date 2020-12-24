@@ -9,7 +9,7 @@ export default function reviewDetails({ navigation }) {
     return (
         <View style={globalStyles.container}>
             <Text style={globalStyles.titleText}>{ navigation.getParam('title') }</Text>
-            <Text style={globalStyles.titleText}>{ navigation.getParam('body') }</Text>
+            <Text style={globalStyles.titleText}>{ navigation.getParam('description') }</Text>
             <Text style={globalStyles.titleText}>{ navigation.getParam('rating') } / 5</Text>
             <Rating 
                 type='custom' 

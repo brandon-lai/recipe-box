@@ -3,14 +3,15 @@ import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { Formik } from 'formik';
 
-export default function RecipeForm() {
+export default function RecipeForm({ addRecipe }) {
 
     return (
         <View style={globalStyles.container}>
             <Formik
                 initialValues={{ title: '', description: '', rating: '' }}
-                onSubmit={(values) => {
-                    console.log(values)
+                onSubmit={(values, actions) => {
+                    actions.resetForm();
+                    addRecipe(values);
                 }}
             >
                 {(formikProps) => (

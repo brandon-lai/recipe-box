@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
 import RecipeForm from './recipeForm';
+import uuid from 'react-uuid';
 
 export default function Home({ navigation }) {
     const [modalOpen, setModalOpen] = useState(false);
 
     const [recipes, setRecipes] = useState([
-        { title: 'Shrimp Scampi', rating: 5, body: 'Easy, delicious shrimp scampi recipe', key: '1' },
-        { title: 'Brioche French Toast', rating: 4, body: 'Fluffy french toast', key: '2' },
-        { title: 'Oatmeal Chocolate Chip Cookies', rating: 5, body: 'Easy, delicious oatmeal chocolate chip cookies', key: '3' },
+        { title: 'Shrimp Scampi', rating: 5, description: 'Easy, delicious shrimp scampi recipe', key: '1' },
+        { title: 'Brioche French Toast', rating: 4, description: 'Fluffy french toast', key: '2' },
+        { title: 'Oatmeal Chocolate Chip Cookies', rating: 5, description: 'Easy, delicious oatmeal chocolate chip cookies', key: '3' },
     ]);
     
+    const addRecipe = (recipe) => {
+        recipe.key = uuid();
+        setRecipes((currentRecipes) => {
+            return [recipe, ...currentRecipes]
+        });
+        setModalOpen(false);
+    }
+
     return (
         <View style={globalStyles.container}>
-
             <Modal visible={modalOpen} animationType='slide'>
-                <View style={styles.modalContent}>
-                    <MaterialIcons 
-                        name='close'
-                        size={24}
-                        style={{ ...styles.modalToggle, ...styles.modalClose }}
-                        onPress={() => setModalOpen(false)}
-                    />
-                    <RecipeForm />
-                </View>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <View style={styles.modalContent}>
+                        <MaterialIcons 
+                            name='close'
+                            size={24}
+                            style={{ ...styles.modalToggle, ...styles.modalClose }}
+                            onPress={() => setModalOpen(false)}
+                        />
+                        <RecipeForm addRecipe={addRecipe} />
+                    </View>
+                </TouchableWithoutFeedback>
             </Modal>
 
             <MaterialIcons 
