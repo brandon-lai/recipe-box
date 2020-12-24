@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         color: globalStyles.header.color,
-        letterSpacing: 1,
+        letterSpacing: 1
     },
     icon: {
         position: 'relative',
         alignItems: 'flex-start',
         justifyContent: 'space-evenly',
-        color: globalStyles.header.color,
+        color: globalStyles.header.color
     }
 })

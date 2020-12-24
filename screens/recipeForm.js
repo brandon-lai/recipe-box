@@ -62,7 +62,6 @@ export default function RecipeForm({ addRecipe }) {
                         />
                         <Text style={globalStyles.errorText}> { formikProps.touched.rating && formikProps.errors.rating } </Text>
 
-                        {/* <Button title='Save' color={globalStyles.header.backgroundColor} onPress={formikProps.handleSubmit} /> */}
                         <FlatButton text='Save' onPress={formikProps.handleSubmit} />
                     </View>
                 )}
