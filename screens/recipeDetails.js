@@ -14,7 +14,7 @@ export default function reviewDetails({ navigation }) {
                 type='custom' 
                 imageSize={30} 
                 readonly 
-                startingValue={rating} 
+                startingValue={parseInt(rating)} 
                 ratingBackgroundColor={globalStyles.ratings.backgroundColor} 
                 ratingColor={globalStyles.ratings.color} 
                 tintColor={globalStyles.ratings.backgroundColor} 
