@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const globalStyles = StyleSheet.create({
     header: {
         backgroundColor: '#ffbf69',
-        color: '#fff',
+        color: '#fff'
     },
     container: {
         flex: 1,
@@ -24,13 +24,20 @@ export const globalStyles = StyleSheet.create({
     ratings: {
         backgroundColor: '#fff',
         color: '#ffbf69',
-        alignItems: 'flex-end',
+        alignItems: 'flex-end'
     },
     input: {
         borderWidth: 1,
         borderColor: '#ddd',
         padding: 10,
         fontSize: 18,
-        borderRadius: 6,
+        borderRadius: 6
+    },
+    errorText: {
+        color: '#ffbf69',
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginTop: 6,
+        textAlign: 'center'
     }
 });
