@@ -22,6 +22,10 @@ const screens = {
         screen: RecipeDetails,
         navigationOptions: {
             title: 'Recipe Details',
+            headerTintColor: globalStyles.header.color,
+            headerStyle: {
+                backgroundColor: globalStyles.header.backgroundColor
+            }
         }
     }
 }

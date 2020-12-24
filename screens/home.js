@@ -3,6 +3,7 @@ import { View, Text, Button, FlatList, TouchableOpacity, Modal, StyleSheet } fro
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
+import RecipeForm from './recipeForm';
 
 export default function Home({ navigation }) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Home({ navigation }) {
                         style={{ ...styles.modalToggle, ...styles.modalClose }}
                         onPress={() => setModalOpen(false)}
                     />
-                    <Text>Test</Text>
+                    <RecipeForm />
                 </View>
             </Modal>
 

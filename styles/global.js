@@ -26,4 +26,11 @@ export const globalStyles = StyleSheet.create({
         color: '#ffbf69',
         alignItems: 'flex-end',
     },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ddd',
+        padding: 10,
+        fontSize: 18,
+        borderRadius: 6,
+    }
 });
