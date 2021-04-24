@@ -5,6 +5,7 @@ import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
 import RecipeForm from './recipeForm';
 import uuid from 'react-uuid';
+import SwipeableRow from '../shared/swipeable';
 
 export default function Home({ navigation }) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -21,6 +22,12 @@ export default function Home({ navigation }) {
             return [recipe, ...currentRecipes]
         });
         setModalOpen(false);
+    }
+
+    var deleteRecipe = (key) => {
+        setRecipes((prevRecipes) => {
+            return prevRecipes.filter(recipe => recipe.key != key);
+        });
     }
 
     return (
@@ -50,11 +57,13 @@ export default function Home({ navigation }) {
             <FlatList
                 data={recipes}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('RecipeDetails', item)}>
-                        <Card>
-                            <Text style={globalStyles.titleText}>{ item.title } </Text>
-                        </Card>
-                    </TouchableOpacity>
+                        <SwipeableRow itemKey={item.key} deleteFunction={() => deleteRecipe(item.key)}>
+                            <TouchableOpacity onPress={() => navigation.navigate('RecipeDetails', item)}>
+                                <Card>
+                                    <Text style={globalStyles.titleText}>{ item.title } {item.key}</Text>
+                                </Card>
+                            </TouchableOpacity>
+                        </SwipeableRow>
                 )}
             />
         </View> 
