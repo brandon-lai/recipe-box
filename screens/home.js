@@ -60,7 +60,7 @@ export default function Home({ navigation }) {
                         <SwipeableRow itemKey={item.key} deleteFunction={() => deleteRecipe(item.key)}>
                             <TouchableOpacity onPress={() => navigation.navigate('RecipeDetails', item)}>
                                 <Card>
-                                    <Text style={globalStyles.titleText}>{ item.title } {item.key}</Text>
+                                    <Text style={globalStyles.titleText}>{ item.title }</Text>
                                 </Card>
                             </TouchableOpacity>
                         </SwipeableRow>
